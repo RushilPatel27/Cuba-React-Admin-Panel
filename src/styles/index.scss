@@ -1,0 +1,36 @@
+/* Login Page */
+
+.login-page {
+  .login-card {
+    align-items: center;
+    background: url(https://react.pixelstrap.com/cuba-context/static/media/login_bg.dc5f0101e0d66bb0eee2.jpg);
+    background-position: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 30px 12px;
+  }
+
+  .login-card .login-main {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 37px rgba(8, 21, 66, 0.05);
+    margin: 0 auto;
+    padding: 40px;
+    width: 450px;
+    border-top-left-radius: 0;
+    height: 100%;
+    position: relative;
+  }
+
+  .theme-form h4 {
+    margin-bottom: 5px;
+  }
+
+  .theme-form p {
+    color: #898989;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+}
