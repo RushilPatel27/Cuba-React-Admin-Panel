@@ -4,7 +4,8 @@ import { useLocation } from "react-router";
 export default function Header() {
   const { pathname } = useLocation();
 
-  if (pathname === "/") return <></>;
+  if (pathname === "/" || pathname === "/dashboard");
+  return <></>;
 
   return <div>Header</div>;
 }

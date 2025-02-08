@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import SignIn from "./pages/SignIn";
+import Dashboard from "./pages/Dashboard";
 
 export default function AppRoute() {
   return (
@@ -12,7 +11,7 @@ export default function AppRoute() {
       <Header />
       <Routes>
         <Route path="/" element={<SignIn />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />
