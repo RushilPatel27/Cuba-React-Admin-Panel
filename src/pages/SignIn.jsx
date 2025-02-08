@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router";
 
 export default function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handelPassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handelClickShowHide = () => {
+    setShowPassword((prev) => !prev);
+  };
+
+  const handelBtnClick = () => {
+    console.log(email, "\n", password);
+  };
+
   return (
     <Container fluid as="section" className="login-page p-0">
       <Row className="">
@@ -16,17 +36,28 @@ export default function SignIn() {
                 <div className="mb-3">
                   <Form.Group className="mb-3">
                     <Form.Label>Email Address</Form.Label>
-                    <Form.Control type="email" placeholder="test@gmail.com" />
+                    <Form.Control
+                      type="email"
+                      placeholder="test@gmail.com"
+                      value={email}
+                      onChange={handleEmail}
+                      required
+                    />
                   </Form.Group>
                   <Form.Group className="mb-3 position-relative">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
-                      type="password"
-                      placeholder="*********"
-                      value=""
+                      type={showPassword ? "text" : "password"}
+                      placeholder="****"
+                      value={password}
+                      onChange={handelPassword}
+                      required
                     />
                     <div className="show-hide">
-                      <span className="show"></span>
+                      <span
+                        onClick={handelClickShowHide}
+                        className={showPassword ? "" : "show"}
+                      ></span>
                     </div>
                   </Form.Group>
                   <Form.Group className="mb-3 form-check position-relative ps-0">
@@ -44,6 +75,7 @@ export default function SignIn() {
                     <Button
                       type="button"
                       className="btn btn-primary btn-block w-100 mt-3"
+                      onClick={handelBtnClick}
                     >
                       Sign in
                     </Button>
