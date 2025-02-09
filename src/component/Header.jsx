@@ -5,7 +5,10 @@ export default function Header() {
   const { pathname } = useLocation();
 
   if (pathname === "/" || pathname === "/dashboard");
-  return <></>;
 
-  return <div>Header</div>;
+  return (
+    <>
+      <div>My Application</div>
+    </>
+  );
 }
